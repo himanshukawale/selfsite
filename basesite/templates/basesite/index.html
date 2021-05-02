@@ -1,0 +1,271 @@
+{% extends 'basesite\base.html' %}
+
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'basesite/css/indexcss.css' %}" type="text/css">
+    <style>
+        .myimage{
+            background: url("{% static 'basesite/images/im2.jpg' %}");
+            background-size: 235%;
+            background-position: center -7px;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        body::before {    
+            content: "";
+            background-image: url("{% static 'basesite/images/gears.jpg' %}");
+            background-size: cover;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            opacity: 0.75;
+            z-index: -1;
+        }
+    </style>
+{% endblock style %}
+
+{% block body %}
+
+<div class="welcome">
+    <div class="welcome_text">
+        <span class="greet">Hi,</span>
+        <span class="name">I'M HIMANSHU KAWALE</span>
+        <span class="description">
+            {% for txt in title %}
+                        {{txt.my_title}}
+            {% endfor %}
+        </span>
+        <div class="buttons">
+            <button type="button" class="btn" onclick="window.location.href='#work'">My work</button>
+            <button type="button" class="btn" onclick="window.location.href='#about'">Hire me</button>
+        </div>
+    </div>
+    <div class="myimage"></div>
+</div>
+
+<div class="internships">
+
+    <img src="{% static 'basesite/images/intern_icon.png' %}" alt="" class="section-icon">
+
+    <div class="intern-logo">
+        <img src="{% static 'basesite/images/SBF-logo.png' %}" class="card-img-top" alt="...">
+        <img src="{% static 'basesite/images/hero-logo.png' %}" class="card-img-top" alt="...">
+        <img src="{% static 'basesite/images/OML-logo.png' %}" class="card-img-top" alt="...">
+    </div>
+
+    <div class="intern-des-box">
+        <div class="intern-des">
+            <h5 class="card-title">HR Intern</h5>
+            <h6 class="card-subtitle mb-2 text-muted">At Shreshtha Bharat Foundation</h6>
+        </div>
+        <div class="intern-des">
+            <h5 class="card-title">Technical Intern</h5>
+            <h6 class="card-subtitle mb-2 text-muted">At Shree Automobiles,<br>Authorised showroom of HERO MotoCorp</h6>
+        </div>
+        <div class="intern-des">
+            <h5 class="card-title">Mental Health Ambassador</h5>
+            <h6 class="card-subtitle mb-2 text-muted">At One More Light</h6>
+        </div>
+    </div>
+       
+</div>
+
+<div id="about" class="about_box">
+    <div class="about_left">
+        <h2>About Me</h2>
+        <p class="about_text">Hello! I am Himanshu Kawale.
+            {% for txt in title %}
+                        {{txt.my_title}}
+            {% endfor %}
+        </p>
+        <p class="about_text">
+            {% for txt in about %}
+                        {{txt.About_me}}
+            {% endfor %}
+        </p>
+        <h2>Skills</h2>
+            <div class="skill_graph">
+                <div class="y_axis">
+                    <span>Artistic sense</span>
+                    <hr>
+                    <span>Critical Thinking</span>
+                    <hr>
+                    <span>Management</span>
+                    <hr>
+                    <span>Programming (Python, HTML & CSS)</span>
+                    <hr>
+                    <span>Drafting & 3D Modelling</span>
+                    <hr>
+                </div>
+                <div class="bars">
+                    <div class="b b1"><i class="fas fa-running"></i></div>
+                    <div class="b b2"><i class="fas fa-running"></i></div>
+                    <div class="b b3"><i class="fas fa-running"></i></div>
+                    <div class="b b4"><i class="fas fa-running"></i></div>
+                    <div class="b b5"><i class="fas fa-running"></i></div>
+                </div>
+            </div>
+    </div>
+    
+
+    <div class="main about_right">
+        <h2>Contact Me</h2>
+        <form method="post" id="contact_form">
+            {% csrf_token %}
+            <label for="id_name">Name:</label><input type="text" name="name" required="" id="id_name">
+            <label for="id_email">Email:</label><input type="email" name="email" required="" id="id_email">
+            <label for="id_message">Message:</label><textarea name="message" cols="40" rows="10" required="" id="id_message"></textarea>
+            <input id="contact_btn" type="submit" value="send">
+        </form>
+    </div>
+</div>
+
+<div id="work">
+    <h2>Work Samples</h2>
+
+    <div class="work_type modeling">
+        <div class="work_des left_des modeling_des">
+            <h3>3D Modelling</h3>
+            <p>
+                {% for items in work_des %}
+                    {% if items.name == "Modelling" %}
+                        {{items.des}}
+                    {% endif %}
+                {% endfor %}
+            </p>
+            <p>Softwares I use:
+                <ol>
+                    <li>Autodesk AutoCAD</li>
+                    <li>Autodesk Fusion 360</li>
+                    <li>Blender</li>
+                </ol>
+            </p>
+        </div>
+    
+        <div class="work_carousel left_carousel modeling_carousel">
+            <div id="carouselExampleControls_1" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    {% for model in models %}
+                        <div class="carousel-item model_item">
+                            <img src="media/{{model.Model_img}}" class="d-block w-100" alt="...">
+                        </div> 
+                    {% endfor %}
+                </div>
+                <div class="hi-prev" data-bs-target="#carouselExampleControls_1" data-bs-slide="prev"></div>
+                <div class="hi-next" data-bs-target="#carouselExampleControls_1" data-bs-slide="next"></div>
+            </div>
+            <div class="check" style="height: 400px; width: 100px; border: red;"></div>
+        </div>
+    </div>
+    
+    <div class="work_type aprojects">
+        <div class="work_des right_des aprojects_des">
+            <h3>Academic Projects</h3>
+            <p>
+                {% for items in work_des %}
+                    {% if items.name == "Project" %}
+                        {{items.des}}
+                    {% endif %}
+                {% endfor %}
+                <ol>
+                    <li>Design of Low Cost A.C. Cabin for Tractor</li>
+                    <li>Design & Fabrication of Grains Drying Machine</li>
+                    <li>Design & Fabrication of Low Cost Mechanically Operated Floor Cleaning Machine</li>
+                </ol>
+            </p>
+
+        </div>
+    
+        <div class="work_carousel right_carousel aprojects_carousel">
+            <div id="carouselExampleControls_2" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    {% for model in aprojects %}
+                        <div class="carousel-item aproject_item">
+                            <img src="media/{{model.aproject_img}}" class="d-block w-100" alt="...">
+                        </div> 
+                    {% endfor %}
+                </div>
+                <div class="hi-prev" data-bs-target="#carouselExampleControls_2" data-bs-slide="prev"></div>
+                <div class="hi-next" data-bs-target="#carouselExampleControls_2" data-bs-slide="next"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="work_type coading">
+        <div class="work_des left_des coading_des">
+            <h3>Programing</h3>
+            <p>
+                {% for items in work_des %}
+                    {% if items.name == "Programming" %}
+                        {{items.des}}
+                    {% endif %}
+                {% endfor %}
+            </p>
+        </div>
+    
+        <div class="work_carousel left_carousel coading_carousel">
+            <div id="carouselExampleControls_3" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    {% for model in codes %}
+                        <div class="carousel-item code_item">
+                            <img src="media/{{model.code_img}}" class="d-block w-100" alt="...">
+                        </div> 
+                    {% endfor %}
+                </div>
+                <div class="hi-prev" data-bs-target="#carouselExampleControls_3" data-bs-slide="prev"></div>
+                <div class="hi-next" data-bs-target="#carouselExampleControls_3" data-bs-slide="next"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="work_type art">
+        <div class="work_des right_des art_des">
+            <h3>Arts</h3>
+            <p>
+                {% for items in work_des %}
+                    {% if items.name == "Art" %}
+                        {{items.des}}
+                    {% endif %}
+                {% endfor %}
+            </p>
+        </div>
+    
+        <div class="work_carousel right_carousel art_carousel">
+            <div id="carouselExampleControls_4" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    {% for model in arts %}
+                        <div class="carousel-item art_item">
+                            <img src="media/{{model.art_img}}" class="d-block w-100" alt="...">
+                        </div> 
+                    {% endfor %}
+                </div>
+                <div class="hi-prev" data-bs-target="#carouselExampleControls_4" data-bs-slide="prev"></div>
+                <div class="hi-next" data-bs-target="#carouselExampleControls_4" data-bs-slide="next"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock body %}
+
+{% block js %}
+
+    <script>
+        function activeSlider() {
+            var cm_element = document.getElementsByClassName("model_item")[0];
+            cm_element.classList.add("active");
+            var ca_element = document.getElementsByClassName("art_item")[0];
+            ca_element.classList.add("active");
+            var cc_element = document.getElementsByClassName("code_item")[0];
+            cc_element.classList.add("active");
+            var cc_element = document.getElementsByClassName("aproject_item")[0];
+            cc_element.classList.add("active");
+        }
+        activeSlider()
+    </script>
+
+{% endblock js %}

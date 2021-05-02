@@ -1,0 +1,468 @@
+/* For Mobile */
+
+body{
+    background-color: rgb(68, 68, 68);
+}
+
+h2{
+    color: var(--nav-color);
+    margin-bottom: 1.5rem;
+}
+
+.welcome{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 47.2rem;
+    height: 41.3rem;
+}
+
+.welcome_text{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 79px;
+}
+
+.greet{
+    font-family: 'Dancing Script', cursive;
+    color: var(--nav-color);
+    font-size: 8rem;
+}
+
+.name{
+    font-family: lato;
+    font-weight: 900;
+    font-size: 1.7rem
+}
+
+.description{
+    color: var(--nav-color);
+}
+
+.buttons button{
+    background-color: royalblue;
+    color: white;
+    margin-top: 2rem;
+    font-family: 'Dancing Script';
+    font-size: 1.5rem;
+    box-shadow: 0px 0px 6px black;
+}
+
+.buttons .btn:nth-child(2){
+    margin-left: 4rem;
+}
+
+.internships{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-areas: 
+    ". . . icn logo logo logo logo logo logo . . ."
+    ". . . icn txt txt txt txt txt txt . . .";
+    background-color: white;
+}
+
+.section-icon{
+    grid-area: icn;
+    width: 7rem;
+    margin: auto;
+}
+
+.card{
+    margin: 0px 50px;
+    width: 10rem;
+    height: 10rem;
+    overflow: hidden;
+}
+
+.intern-logo{
+    grid-area: logo;
+    display: flex;
+}
+
+.card-img-top{
+    margin: 0.3rem auto;
+    width: 2.1rem;
+    align-self: center;
+}
+
+.intern-des-box{
+    grid-area: txt;
+    display: flex;
+}
+
+.intern-des{
+    margin: auto;
+    margin-top: 0.4rem;
+    margin-left: 1.4rem;
+    align-self: center;
+    text-align: center;
+}
+
+
+.card-title{
+    font-size: 0.85rem;
+}
+
+.card-subtitle{
+    font-size: 0.5rem;
+}
+
+.about_box {
+    height: auto;
+    overflow: hidden;
+    max-height: fit-content;
+    margin: 30px 10% 0px 10%;
+    background-color: transparent;
+    padding: 20px;
+    padding-bottom: 50px;
+    box-shadow: 2px 8px 8px 4px rgb(0 0 0 / 20%), 2px 6px 20px 4px rgb(0 0 0 / 19%);
+    -moz-box-shadow: 2px 8px 8px 4px rgba(0, 0, 0, 0.2), 2px 6px 20px 4px rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 2px 8px 8px 4px rgb(0 0 0 / 20%), 2px 6px 20px 4px rgb(0 0 0 / 19%);
+}
+
+.about_box p{
+    color: white;
+}
+
+.about_box td{
+    color: white;
+}
+
+#contact_form{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 342px;
+}
+
+
+#contact_form > *{
+    color: white;
+    margin: 20px 0px;
+}
+
+#contact_form > *:focus{
+    outline: none;
+}
+
+#contact_form > input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+#contact_form > textarea{
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+}
+
+
+#contact_btn{
+    width: 127px;
+    height: 42px;
+    /* background-color: transparent; */
+    /* border: none; */
+    border-bottom-left-radius: 23px;
+    border-top-right-radius: 23px;
+    border-bottom: 1px solid var(--primary-color);
+    border-top: 1px solid var(--primary-color) !important ;
+}
+
+.skill_graph{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-areas: 
+    "y bar bar bar bar bar bar bar"
+    "y bar bar bar bar bar bar bar"
+    ". x x x x x x x";
+    grid-gap: 2rem;
+    height: 25rem;
+    width: 93%;
+}
+
+.bars{
+    grid-area: bar;
+    display: flex;
+    flex-direction: column;
+}
+
+.b{
+    height: 1.2rem;
+    margin: auto 0;
+    background-color: var(--nav-color);
+    border-radius: 30px;
+}
+
+.b i{
+    margin-left: 100%;
+    font-size: 1.4rem;
+    color: var(--nav-color);
+}
+
+.b1{
+    width: 46%;
+    margin-top: 0;
+}
+.b2{
+    width: 40%;
+    margin-top: 1.4rem;
+    margin-bottom: 0;
+}
+.b3{
+    width: 52%;
+    margin-top: 4.3rem;
+}
+.b4{
+    width: 66%;
+    margin-top: 0;
+}
+.b5{
+    width: 76%;
+    margin-bottom: 2.9rem;
+}
+
+.y_axis{
+    grid-area: y;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    color: white;
+    width: 6rem;
+}
+
+.y_axis span {
+    text-align: end;
+    margin-bottom: auto;    
+}
+
+.y_axis hr{
+    margin: 0;
+    background-color: var(--nav-color);
+    border: 0;
+    opacity: 1;
+    width: 11rem;
+}
+
+#work{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(49, 49, 49);
+    margin-top: 6rem;
+}
+
+#work h2{
+    display: inline-block;
+    margin: 2rem auto;
+}
+
+
+#work h3{
+    /* color: rgb(90, 90, 252); */
+    color: white;
+    text-align: center;
+}
+
+#work p{
+    color: white;
+    text-align: justify;
+}
+
+.work_type{
+    display: flex;
+    flex-direction: column;
+    height: 38rem;
+}
+
+.aprojects, .coading{
+    margin-top: 5rem;
+}
+
+.carousel{
+    box-shadow: 2px 8px 8px 4px rgb(0 0 0 / 20%), 2px 6px 20px 4px rgb(0 0 0 / 19%);
+    -moz-box-shadow: 2px 8px 8px 4px rgba(0, 0, 0, 0.2), 2px 6px 20px 4px rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 2px 8px 8px 4px rgb(0 0 0 / 20%), 2px 6px 20px 4px rgb(0 0 0 / 19%);
+}
+
+
+.hi-next { right: 10px; }
+.hi-prev { left: 10px; }
+
+.hi-prev::before { content: '<'; }
+.hi-next::before { content: '>'; }
+
+.hi-next, .hi-prev 
+{ position: absolute;
+    top: 50%; 
+    width: 40px;
+    height: 40px; 
+    margin-top: -20px;     
+    border-radius: 50px; 
+    
+    
+    line-height: 40px;
+    text-align: center; 
+    cursor: pointer;
+    background-color: #fff; 
+    color: black;               
+    transition: all 0.6s;
+    font-size: 20px; 
+    font-weight: bold;
+}
+.hi-slide .hi-next:hover, 
+.hi-slide .hi-prev:hover 
+{
+    opacity: 1; 
+    background-color: #fff;  
+}
+
+.work_des{
+    margin: 5%;
+}
+
+.work_des li{
+    color: var(--nav-color);
+}
+
+@media only screen and (min-width: 600px){
+
+    .welcome{
+        height: 47.2rem;
+    }
+
+    .myimage{
+            margin-top: 65px;
+            margin-left: 27px;
+            width: 420px;
+            height: 420px;
+            border: 15px solid var(--nav-color);
+            border-radius: 50%;
+    }
+
+    .name{
+        font-size: 2.7rem
+    }
+
+    .section-icon{
+        width: 15rem;
+    }
+
+    .card-img-top {
+        width: 4.1rem;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+    }
+
+    .card-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .intern-des {
+        margin: auto;
+    }
+
+    /* *********************** */
+
+    .about_left {
+        float: left;
+        width: 50%;
+        background-color: transparent;
+    }
+
+    .about_right{
+        float: right;
+        width: 50%;
+        background-color: transparent;
+    }
+
+    .about_right h2{
+        float: right;
+        text-align: center;
+    }
+
+    /* ************************************************************************************** */
+
+    .main{
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #contact_form{
+        width: 505px;
+    }
+    /* ***************************************************************************************** */
+
+    .b2{
+        width: 40%;
+        margin-top: 2.4rem;
+    }
+    .b3{
+        width: 52%;
+        margin-top: 4.9rem;
+    }
+    .b4{
+        width: 66%;
+        margin-top: 0.9rem;
+    }
+    .b5{
+        width: 76%;
+        margin-bottom: 3.3rem;
+    }
+
+    .y_axis{
+        width: 8rem;
+    }
+
+    .y_axis hr{
+        width: 19rem;
+    }
+    
+
+    /* ******************************************************************************* */
+    .aprojects, .coading{
+        margin-top: 0rem;
+    }
+    .hi-next { right: -60px; }
+    .hi-prev { left: -60px; }
+
+
+    .work_des{
+        width: 40%;
+        margin: 0%;
+        display: inline-block;
+        text-align: justify;
+    }
+
+    .left_des{
+        margin-left: 3rem;
+    }
+
+    .left_carousel{
+        margin: 30px 5% 0px 49%;
+        position: absolute
+    }
+
+    .right_carousel{
+        margin: 30px 49% 0px 5%;
+        position: absolute;
+    }
+
+    .work_carousel{
+        margin-top: 2rem
+    }
+
+    .art, .aprojects{
+        align-items: flex-end;
+    }
+
+    .right_des{
+        margin-right: 3rem;
+    }
+}
