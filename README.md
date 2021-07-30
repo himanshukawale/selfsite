@@ -12,8 +12,8 @@ Framework: Django
 
 ## Screenshots
 
-![Website Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-![Website Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-![Website Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Website Screenshot](https://github.com/himanshukawale/selfsite/blob/main/Screenshots/1st.png)
+![Website Screenshot](https://github.com/himanshukawale/selfsite/blob/main/Screenshots/2nd.png)
+![Website Screenshot](https://github.com/himanshukawale/selfsite/blob/main/Screenshots/3rd.png)
 
   
