@@ -139,9 +139,14 @@
             </p>
             <p>Softwares I use:
                 <ol>
-                    <li>Autodesk AutoCAD</li>
+                    {% for items in work_des %}
+                    {% if items.name == "Modelling_li" %}
+                        <li>{{items.des}}</li>
+                    {% endif %}
+                    {% endfor %}
+                    <!-- <li>Autodesk AutoCAD</li>
                     <li>Autodesk Fusion 360</li>
-                    <li>Blender</li>
+                    <li>Blender</li> -->
                 </ol>
             </p>
         </div>
@@ -172,9 +177,14 @@
                     {% endif %}
                 {% endfor %}
                 <ol>
-                    <li>Design of Low Cost A.C. Cabin for Tractor</li>
+                    {% for items in work_des %}
+                    {% if items.name == "Project_li" %}
+                        <li>{{items.des}}</li>
+                    {% endif %}
+                    {% endfor %}    
+                    <!-- <li>Design of Low Cost A.C. Cabin for Tractor</li>
                     <li>Design & Fabrication of Grains Drying Machine</li>
-                    <li>Design & Fabrication of Low Cost Mechanically Operated Floor Cleaning Machine</li>
+                    <li>Design & Fabrication of Low Cost Mechanically Operated Floor Cleaning Machine</li> -->
                 </ol>
             </p>
 
@@ -201,9 +211,16 @@
             <p>
                 {% for items in work_des %}
                     {% if items.name == "Programming" %}
-                        {{items.des}}
+                        <p>{{items.des}}</p>
                     {% endif %}
                 {% endfor %}
+                <ol>
+                    {% for items in work_des %}
+                    {% if items.name == "Programming_li" %}
+                        <li>{{items.des}}</li>
+                    {% endif %}
+                    {% endfor %}
+                </ol>
             </p>
         </div>
     
@@ -231,6 +248,13 @@
                         {{items.des}}
                     {% endif %}
                 {% endfor %}
+                <ol>
+                    {% for items in work_des %}
+                    {% if items.name == "Art_li" %}
+                        <li>{{items.des}}</li>
+                    {% endif %}
+                    {% endfor %}
+                </ol>
             </p>
         </div>
     
